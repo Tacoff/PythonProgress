@@ -1,2 +1,2 @@
 # StudyPython
-some scripts record my way of studing
+some scripts record my way of studying
