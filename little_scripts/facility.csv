@@ -1,0 +1,13 @@
+logintype,logo,manageip,username,password,poritypwd,cmd
+telnet,cisco,10.1.1.241,test,test,test,"terminal length 0
+enable
+show ip inter b
+terminal length 25"
+ssh,cisco,10.1.1.242,test,test,test,"terminal length 0
+enable
+show ip inter b
+terminal length 25"
+ssh,cisco,10.1.1.243,test,test,test,"terminal length 0
+enable
+show ip inter b
+terminal length 25"

@@ -3,41 +3,41 @@
 import paramiko
 import telnetlib
 import os,sys,re,time,csv
-import multiprocessing as mul
+#import multiprocessing as mul
 import logging
-
-
+reload(sys)
+sys.setdefaultencoding("utf8")
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s Funcname:(%(funcName)s) [line:%(lineno)d] %(levelname)s %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S',
-                    filename=os.path.join(os.getcwd(),'log.txt'),
+                    filename=os.path.join(sys.path[0],'log.txt'),
                     filemode='a')
-
 
 class PromptError(Exception):
     pass
-
 
 def Login(fieldlist):
     result = None
     status = None
     logingtype = fieldlist[0]
+    # print logingtype
     if logingtype == "ssh":
         status,result = SSHlogin(fieldlist[1:])
     elif logingtype == "telnet":
         status,result = TELNETlogin(fieldlist[1:])
-
-
-
+    return status,result
 
 def SSHlogin(loginfields):
-    global success_count
+    # print loginfields
     hostname = loginfields[1]
     username = loginfields[2]
     password = loginfields[3]
+    userpawd = loginfields[4] if loginfields[4] else None
+    configlist = loginfields[5]
+    usermode = ['enable','system-view']
     client = paramiko.SSHClient()
-    known_hosts_file = os.path.join(os.getcwd(),"known_hosts")
+    known_hosts_file = os.path.join(sys.path[0],"known_hosts")
     if not os.path.exists(known_hosts_file):
         with file(known_hosts_file,"w") as f:
             pass
@@ -47,23 +47,36 @@ def SSHlogin(loginfields):
     #print hosts.items()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     try:
-        client.connect(hostname,username=username,password=password)      
+        client.connect(hostname,username=username,password=password,look_for_keys = False,allow_agent = False)
+        clientbuf = client.invoke_shell()
+        output = clientbuf.recv(1000)      
     except Exception,e:
-        print "wrong"
-        print e.message
+        logging.error(e.message+"connect error")
+        return 0,None
     else:
-        print "sum"
-        stdin, stdout, stderr = client.exec_command("halt -p")
-        print stdout.read()
-        success_count+=1
+        config = {}
+        while configlist:
+            print configlist[0]
+            clientbuf.send(configlist[0]+"\n")
+            time.sleep(1)
+            #print "OK"
+            if configlist[0] in usermode :
+                if not userpawd == None :
+                    clientbuf.send(userpawd+"\n")
+                    #print clientbuf.recv(1000)
+                    configlist.pop(0)
+            else:
+                config[configlist[0]]=cont=clientbuf.recv(5000)
+                #print cont
+                configlist.pop(0)
+        return 1,config
     finally:
         client.close()
-        print "close"
 
 
 def TELNETlogin(loginfields):
     tel = telnetlib.Telnet()
-    print loginfields
+    #print loginfields
     hostname = loginfields[1]
     username = loginfields[2]
     password = loginfields[3]
@@ -75,31 +88,32 @@ def TELNETlogin(loginfields):
         tel.open(hostname)
         stdout = tel.expect(expectwords,timeout=10)
         if stdout[0] == -1:
-            raise PromptError("There are not any Prompts match")
+            raise PromptError("Login:There are not any Prompts match")
         tel.write(username+"\r\n")
         stdout = tel.expect(expectwords,timeout=10)
         if stdout[0] == -1:
-            raise PromptError("There are not any Prompts match")
+            raise PromptError("Username:There are not any Prompts match")
         tel.write(password+"\r\n")
         stdout = tel.expect(expectwords,timeout=10)
         if stdout[0] == -1:
-            raise PromptError("There are not any Prompts match")
+            raise PromptError("Password:There are not any Prompts match")
     except PromptError,e:
         logging.error(e.message)
         return 0,None
     except Exception,e:
-        logging.error(e.message)
+        logging.error(e.message+"connect error")
         return 0,None
     else:
         config = {}
         while configlist:
             tel.write(configlist[0]+"\r\n")
+            print configlist[0]+"-"*10
             time.sleep(1)
             if configlist[0] in usermode :
                 try:
                     stdout = tel.expect(expectwords,timeout=10)
                     if stdout[0] == -1:
-                        raise PromptError("There are not any Prompts match")
+                        raise PromptError("Usermode:There are not any Prompts match")
                 except PromptError,e:
                     logging.error(e.message)
                     return 0,None
@@ -131,12 +145,38 @@ def Readconfig(filepath):
                 hostinfo.append(cont[:-1]+[cont[-1].split('\n')])
     return hostinfo
 
-def main():
-    filename = os.path.join(os.getcwd(),"facility.csv")
-    hosts = Readconfig(filename)
-    for line in hosts:
-        #print line
-        Login(line)
+def Writeconfig(filepath, config):
+    repl = re.compile("\s+")
+    if config is not None:
+        for keys in config:
+            name = repl.sub("_",keys)+".log"
+            with file(os.path.join(filepath,name),'w') as f:
+                f.write(config[keys])
+
+def main(faname, outputpath = None):
+    configfile = os.path.join(sys.path[0],faname)
+    hostinfos = Readconfig(configfile)
+    today = time.strftime("%Y-%m-%d")
+    if outputpath == None:
+        datapath = os.path.join(sys.path[0],today)
+    else:
+        datapath = os.path.join(outputpath,today)
+    if not os.path.exists(datapath):
+        os.mkdir(datapath)
+    for perhost in hostinfos:
+        print perhost
+        ipname = perhost[2]
+        status,result = Login(perhost)
+        # print status
+        directname = None
+        if status == 0:
+            directname = "failure_"+ipname
+        elif status == 1:
+            directname = ipname
+        filepath = os.path.join(datapath,directname)
+        if not os.path.exists(filepath):
+            os.mkdir(filepath)
+        Writeconfig(filepath,result)
 
 """
     mul.freeze_support()
@@ -165,9 +205,9 @@ def main():
     result = [cpool.apply_async(SSHlogin,(hosts,)) for hosts in whole]
     cpool.close()
     cpool.join()
-
-    
-
 """
+
 if __name__ == '__main__':
-    main()
+    configfile = "facility.csv"
+    output = ""
+    main(configfile,None)
