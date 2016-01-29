@@ -1,0 +1,179 @@
+﻿[Hostname]
+FBPOP-SZC
+[CPUInfo]
+PhysicalCPU:2 LogicalCPU:2
+[RamInfo]
+PhysicalMEMinMB:4095 PagesinMB4095 VirtualMEMinMB8189
+[TimeZone]
+GMT +8:00
+[StorageCapicity]
+Drive:C: FSType:NTFS CapacityInMB:40858 FreeSpaceInMB: 16117.87 FreeSpace: 39.45%
+Drive:D: FSType:NTFS CapacityInMB:61437 FreeSpaceInMB: 25775.73 FreeSpace: 41.95%
+[IISVersion]
+NA
+[ScheduleInfo]
+[DotnetframeworkVersion]
+[DNS]
+10.1.18.46,10.1.78.46,
+[IPAddress]
+10.0.10.147,
+[Mac]
+00:50:56:A6:39:EC,
+[UserInfo]
+User:@guest@ FullName: IsDisabled:True
+User:AdminService FullName:AdminService IsDisabled:False
+User:cmbadmin FullName: IsDisabled:False
+User:cmbinfosec FullName:cmbinfosec IsDisabled:False
+[SystemTime]
+2016/1/28 2:07:12
+[HostsMd5]
+3A11E9339B90E8F06A4B5FA6407BD9E4
+[Server]
+Running
+[Workstation]
+Running
+[WindowsFirewall]
+Running
+[Netlogon]
+Stopped
+[SNMPTRAP]
+Stopped
+[JavaVersion]
+N/A
+[KeepAliveTime]
+300000
+[SynAttackProtect]
+2
+[EnableTCPChimney]
+0
+[EnableTCPA]
+0
+[EnableRSS]
+0
+[IPV6DisabledComponents]
+-1
+[Path]
+C:\Python27\;C:\Python27\Scripts;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\
+[ListeningPort]
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:443            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:1002           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:1025           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:1026           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:1027           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:1028           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:1050           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:1052           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:8080           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:8389           0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:10800          0.0.0.0:0              LISTENING
+  TCP    0.0.0.0:47001          0.0.0.0:0              LISTENING
+
+[LocalUserGroup]
+Administratos:  AdminService cmbadmin cmbinfosec
+Guests:  @guest@
+[AppFolderAuth]
+D:\Applications\CmbBank_AP BUILTIN\Administrators:(F)
+                           BUILTIN\IIS_IUSRS:(OI)(CI)(M)
+                           BUILTIN\Administrators:(I)(OI)(CI)(F)
+                           NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+                           CREATOR OWNER:(I)(OI)(CI)(IO)(F)
+                           BUILTIN\Users:(I)(OI)(CI)(RX)
+                           BUILTIN\Users:(I)(CI)(AD)
+                           BUILTIN\Users:(I)(CI)(WD)
+
+已成功处理 1 个文件; 处理 0 个文件时失败
+
+D:\Applications\CmbBank_CCS BUILTIN\Administrators:(F)
+                            BUILTIN\Administrators:(I)(OI)(CI)(F)
+                            NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+                            CREATOR OWNER:(I)(OI)(CI)(IO)(F)
+                            BUILTIN\Users:(I)(OI)(CI)(RX)
+                            BUILTIN\Users:(I)(CI)(AD)
+                            BUILTIN\Users:(I)(CI)(WD)
+
+已成功处理 1 个文件; 处理 0 个文件时失败
+
+D:\Applications\CmbBank_EHome : N/A
+D:\Applications\CmbBank_FB BUILTIN\Administrators:(F)
+                           BUILTIN\IIS_IUSRS:(OI)(CI)(M)
+                           BUILTIN\Administrators:(I)(OI)(CI)(F)
+                           NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+                           CREATOR OWNER:(I)(OI)(CI)(IO)(F)
+                           BUILTIN\Users:(I)(OI)(CI)(RX)
+                           BUILTIN\Users:(I)(CI)(AD)
+                           BUILTIN\Users:(I)(CI)(WD)
+
+已成功处理 1 个文件; 处理 0 个文件时失败
+
+D:\Applications\CmbBank_GenShell BUILTIN\Administrators:(F)
+                                 BUILTIN\Administrators:(I)(OI)(CI)(F)
+                                 NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+                                 CREATOR OWNER:(I)(OI)(CI)(IO)(F)
+                                 BUILTIN\Users:(I)(OI)(CI)(RX)
+                                 BUILTIN\Users:(I)(CI)(AD)
+                                 BUILTIN\Users:(I)(CI)(WD)
+
+已成功处理 1 个文件; 处理 0 个文件时失败
+
+D:\Applications\CmbBank_Public BUILTIN\Administrators:(F)
+                               BUILTIN\Administrators:(I)(OI)(CI)(F)
+                               NT AUTHORITY\SYSTEM:(I)(OI)(CI)(F)
+                               CREATOR OWNER:(I)(OI)(CI)(IO)(F)
+                               BUILTIN\Users:(I)(OI)(CI)(RX)
+                               BUILTIN\Users:(I)(CI)(AD)
+                               BUILTIN\Users:(I)(CI)(WD)
+
+已成功处理 1 个文件; 处理 0 个文件时失败
+
+D:\Applications\EHomeSyncService : N/A
+[Process]
+# missing
+[Regedit]
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AFD\Parameters\EnableDynamicBacklog    1
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AFD\Parameters\MinimumDynamicBacklog    20
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AFD\Parameters\MaximumDynamicBacklog    160000
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AFD\Parameters\DynamicBacklogGrowthDelta    10
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AFD\Parameters\LargeBufferSize    8192
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AFD\Parameters\LargeBufferListDepth    20
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AFD\Parameters\SmallBufferSize    256
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AFD\Parameters\SmallBufferListDepth    64
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AFD\Parameters\mediumbufferlistdepth    48
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AFD\Parameters\mediumbuffersize    3008
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\ICSDomain    mshome.net
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\SyncDomainWithMembership    1
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\NV Hostname    FBPOP-SZC
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\DataBasePath    %SystemRoot%\System32\drivers\etc
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\NameServer    
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\ForwardBroadcasts    0
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\IPEnableRouter    0
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\Domain    
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\Hostname    FBPOP-SZC
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\SearchList    
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\UseDomainNameDevolution    1
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\EnableICMPRedirect    0
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\DeadGWDetectDefault    1
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\DontAddDefaultGatewayDefault    0
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\KeepAliveTime    300000
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\SynAttackProtect    2
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\EnableTCPChimney    0
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\EnableRSS    0
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\EnableTCPA    0
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\EnableDeadGWDetect    0
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\NoNameReleaseOnDemand    1
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\TcpMaxHalfOpen    100
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\TcpMaxHalfOpenRetried    80
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\TcpMaxConnectResponseRetransmissions    1
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\TcpMaxDataRetransmissions    3
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\TCPMaxPortsExhausted    5
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\DisableIPSourceRouting    2
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\TcpTimedWaitDelay    30
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\MaxUserPort    65534
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\Tcp1323Opts    3
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\GlobalMaxTcpWindowSize    131072
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\TcpWindowSize    131072
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\PerformRouterDiscovery    0
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP\Parameters\tcpmaxconnectresponseretransmission    1
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters    1
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AFD\Parameters    1
