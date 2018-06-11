@@ -1,2 +1,2 @@
 # StudyPython
-some scripts record my way of studying
+This is used to record the progress that how I learn python.
