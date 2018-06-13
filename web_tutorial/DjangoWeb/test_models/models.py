@@ -48,7 +48,7 @@ class Author(models.Model):
 
 # notice the order of through_fields
 # through_fields accepts a 2-tuple ('field1', 'field2'), where field1 is the name of the foreign
-# key to the model (means myself, fuck unclear) the ManyToManyField is defined on (group in this case), and field2 the name of the
+# key to the model (means myself, omg unclear) the ManyToManyField is defined on (group in this case), and field2 the name of the
 # foreign key to the target model (person in this case).
 class Person(models.Model):
     name = models.CharField(max_length=128)
