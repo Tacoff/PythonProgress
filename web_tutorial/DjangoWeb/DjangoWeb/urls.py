@@ -12,6 +12,10 @@ Class-based views
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+
+    Whenever Django encounters include(), it chops off whatever part of the
+    URL matched up to that point and sends the remaining string to the included
+    URLconf for further processing.
 """
 from django.contrib import admin
 from django.urls import path, include
